@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military Training Tycoon</title>
+    <!-- External CSS libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .stats {
+            background-color: #2d2d2d;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stats p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .stats .icon {
+            margin-right: 10px;
+        }
+
+        .btn {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            filter: brightness(110%);
+        }
+
+        .btn-success {
+            background-color: #3f9142;
+        }
+
+        .btn-primary {
+            background-color: #2674b9;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4a5568;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .notification.fade-out {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <div class="container">
+        <h1 class="text-4xl font-bold">Military Training Tycoon</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="stats bg-gray-800 p-6 rounded-lg">
+                <p><i class="fas fa-person-military-rifle icon"></i>Soldiers Trained: <span id="soldiers"
+                        class="font-bold">0</span></p>
+                <p><i class="fas fa-building icon"></i>Training Facilities Level: <span id="facility-level"
+                        class="font-bold">1</span></p>
+                <p><i class="fas fa-stopwatch icon"></i>Training Rate: <span id="training-rate"
+                        class="font-bold">1</span> soldier/sec</p>
+                <p><i class="fas fa-person-military-rifle icon"></i>Total Soldiers: <span id="total-soldiers"
+                        class="font-bold">0</span></p>
+            </div>
+            <div class="flex justify-center items-center">
+                <button class="btn btn-success px-8 py-4 rounded-full" onclick="trainSoldier()">Train
+                    Soldier</button>
+                <button class="btn btn-primary px-8 py-4 rounded-full ml-4" onclick="upgradeFacility()">Upgrade
+                    Facility</button>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <!-- Button removed -->
+        </div>
+    </div>
+
+    <!-- In-game notification container -->
+    <div id="notification-container"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
