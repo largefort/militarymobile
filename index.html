@@ -11,73 +11,88 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            background-color: #1a1a1a;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-        }
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        h1 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        .stats {
-            background-color: #2d2d2d;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
+.stats {
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
 
-        .stats p {
-            font-size: 1.1rem;
-            margin: 10px 0;
-        }
+.stats p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
 
-        .stats .icon {
-            margin-right: 10px;
-        }
+.stats .icon {
+    margin-right: 10px;
+}
 
-        .btn {
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.btn {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .btn:hover {
-            filter: brightness(110%);
-        }
+.btn:hover {
+    filter: brightness(110%);
+}
 
-        .btn-success {
-            background-color: #3f9142;
-        }
+.btn-success {
+    background-color: #3f9142;
+}
 
-        .btn-primary {
-            background-color: #2674b9;
-        }
+.btn-primary {
+    background-color: #2674b9;
+}
 
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #4a5568;
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            z-index: 9999;
-            opacity: 1;
-            transition: opacity 0.5s ease;
-        }
+/* Notification styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(74, 85, 104, 0.9); /* Updated background color with opacity */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 9999;
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.5s ease;
+}
 
-        .notification.fade-out {
-            opacity: 1;
-        }
+.notification.show {
+    opacity: 1; /* Show notification by changing opacity */
+}
+
+.notification .icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.notification.success {
+    background-color: #3f9142; /* Success notification color */
+}
+
+.notification.error {
+    background-color: #d9534f; /* Error notification color */
+}
+
 
     </style>
 </head>
